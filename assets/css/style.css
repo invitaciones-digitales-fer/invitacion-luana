@@ -172,6 +172,11 @@ body {
     height: 250px;
 }
 
+#clock{display:flex;gap:1rem;justify-content:center;margin-top:1.2rem;}
+.time strong{font-size:3rem;font-weight:700;line-height:1;color:var(--color-primary);}
+.time em{display:block;font-size:.9rem;font-style:normal;letter-spacing:.05rem;}
+
+
 /* ----------FIESTA----------- */
 
 .section-inner {
@@ -294,7 +299,19 @@ li {
 .icon {
     width: 80px;
     height: auto;
-    margin-bottom: 1.2rem
+    margin-bottom: 1.2rem;
+    
+    
+}
+.icon-music {
+    width: 150px;
+    height: auto;
+    margin-bottom: 1.2rem;
+    
+    
+}
+.icon-fiesta{
+    width: 140px;
 }
 
 @keyframes bounce {
@@ -375,4 +392,24 @@ li {
     font-size: 4rem;
 }
 
+/* 1. el hero-logo queda debajo del fold en móviles */
+.hero-overlay img{width:220px;margin-top:4rem}
+
+/* 2. Si usás fondo blanco para .bg-light, asegurate texto oscuro */
+.bg-light{background:#fff;color:#222}
+
+/* 3. unificá fonts */
+body{font-family:'Poppins',sans-serif}
+
+/* 4. botón outline color legible sobre bg-dark */
+.btn.outline{border:2px solid var(--color-primary);color:var(--color-primary)}
+
+
 /* ===== Responsive ===== */
+
+@media (min-width:1024px){
+  .section{padding:90px 40px;}
+  .section-title{font-size:2.4rem}
+  .hero-overlay img{width:360px;margin-top:0;}
+  .icon{width:120px}
+}

@@ -1,0 +1,235 @@
+/* ===== Variables ===== */
+:root {
+    --font-title: 'Poppins', sans-serif;
+    --font-script: 'Great Vibes', cursive;
+    --color-dark: #1e2133;
+    --color-light: #2c3048;
+    --color-primary: #5d6bff;
+    --color-white: #ffffff;
+}
+
+/* ===== Reset rápido ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+body {
+    font-family: var(--font-title);
+    color: var(--color-white);
+    background: var(--color-dark);
+    scroll-behavior: smooth;
+    line-height: 1.6
+}
+
+/* ===== Botones & util ===== */
+.btn {
+    display: inline-block;
+    padding: .9rem 2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .3s
+}
+
+.btn.primary {
+    background: var(--color-primary);
+    color: #fff
+}
+
+.btn.outline {
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary)
+}
+
+.btn:hover {
+    opacity: .85
+}
+
+/* ===== Secciones ===== */
+.section {
+    padding: 70px 20px;
+    text-align: center
+}
+
+.section-inner {
+    max-width: 800px;
+    margin: auto
+}
+
+.section-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.6rem
+}
+
+.bg-dark {
+    background: var(--color-dark)
+}
+
+.bg-light {
+    background: var(--color-light)
+}
+
+/* ===== HERO ===== */
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+    
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, .45)
+}
+
+.hero-name {
+    font: 5rem var(--font-script);
+    color: #fff;
+    letter-spacing: 2px
+}
+
+.hero-sub {
+    font-size: 2rem;
+    margin-top: .5rem
+}
+
+/* Scroll arrow */
+.scroll-down {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    width: 32px;
+    height: 32px;
+    border-right: 4px solid #fff;
+    border-bottom: 4px solid #fff;
+    transform: translateX(-50%) rotate(45deg);
+    animation: arrow 2s infinite;
+}
+
+@keyframes arrow {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -10px) rotate(45deg)
+    }
+
+    50% {
+        opacity: 1;
+        transform: translate(-50%, 0) rotate(45deg)
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, 10px) rotate(45deg)
+    }
+}
+
+/* ===== Countdown ===== */
+.countdown {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-top: 1.5rem
+}
+
+/* ===== Iconos ===== */
+.icon {
+    width: 80px;
+    height: auto;
+    margin-bottom: 1.2rem
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0)
+    }
+
+    50% {
+        transform: translateY(-8px)
+    }
+}
+
+.bounce {
+    animation: bounce 2s ease-in-out infinite
+}
+
+/* ===== Modal ===== */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, .7);
+    z-index: 100
+}
+
+.modal-content {
+    background: #fff;
+    color: #000;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    text-align: left
+}
+
+.modal-content h4 {
+    margin-bottom: 1rem
+}
+
+.modal-content .close {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    font-size: 1.8rem;
+    cursor: pointer
+}
+
+/* ===== Despedida ===== */
+.boom {
+    font-size: 4.5rem;
+    margin-top: 1rem
+}
+
+.rojo {
+    color: #0033fe
+}
+
+.blanco {
+    color: #ffea04
+}
+
+/* ===== Responsive ===== */
+@media (max-width:480px) {
+    .hero-name {
+        font-size: 3.2rem
+    }
+
+    .hero-sub {
+        font-size: 1.4rem
+    }
+
+    .section-title {
+        font-size: 1.5rem
+    }
+
+    .countdown {
+        font-size: 1.6rem
+    }
+}

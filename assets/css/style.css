@@ -7,6 +7,8 @@
     /* fondo claro */
     --color-primary: #dcc602;
     --color-white: #fff;
+    /* Textos */
+    --color-violet: #6d00d1;
 }
 
 /* --------- Reset --------- */
@@ -27,7 +29,7 @@ body {
 /* --------- Botón --------- */
 .btn {
     display: inline-block;
-    padding: .9rem 2rem;
+    padding: 1.2rem 2.2rem;
     border-radius: 25px;
     text-decoration: none;
     text-transform: uppercase;
@@ -38,24 +40,39 @@ body {
 .btn.primary {
     background: var(--color-primary);
     color: #02124d;
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
 .btn.outline {
     border: 2px solid var(--color-dark);
-    margin-top: 1rem;
-    color:#000;
+    margin-top: 2rem;
+    color: #000;
     background-color: #2aff04;
-    
+
 }
 
 .btn:hover {
-    opacity: .85
+    opacity: .55;
+    color: var(--color-violet);
 }
 
-p{
-    font-size: 1.5rem;
+#btnGift {
+    padding: 1.7rem 2.7rem;
+    font-size: 1rem;
 }
+
+p {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+#fiesta,
+#playlist,
+#countdown,
+#rsvp {
+    padding: 20px 20px 60px;
+}
+
 
 /* --------- Secciones --------- */
 .section {
@@ -66,7 +83,21 @@ p{
 .section-title {
     font-size: 1.8rem;
     margin-bottom: 1.6rem;
+    margin-top: 1.5rem;
     text-transform: uppercase;
+
+}
+
+.section-title-fiesta {
+    font-size: 1.8rem;
+    margin-bottom: 1.6rem;
+    text-transform: uppercase;
+    color: var(--color-violet);
+}
+
+.section-click {
+    color: var(--color-violet);
+
 }
 
 .bg-dark {
@@ -87,6 +118,8 @@ p{
     margin-top: .5rem
 }
 
+
+
 /* --------- HERO --------- */
 .hero {
     position: relative;
@@ -98,7 +131,9 @@ p{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center
+    object-position: 20% center;
+    ;
+
 }
 
 .hero-overlay {
@@ -112,21 +147,12 @@ p{
 }
 
 .hero-overlay img {
-    width: 220px;
-    margin-top: 4rem
+    width: 200px;
+    margin-top: 10rem;
+    opacity: 0.8;
 }
 
-@media(min-width:1200px) {
-    .hero-img {
-        height: 90vh;
-        object-position: top center
-    }
 
-    .hero-overlay img {
-        width: 340px;
-        margin-top: 0
-    }
-}
 
 /* Flecha */
 .scroll-down {
@@ -191,27 +217,43 @@ p{
 }
 
 /* --------- Iconos --------- */
-.icon {
-    width: 90px;
-    height: auto;
-    margin-bottom: 1.2rem
-}
 
-.bounce {
-    animation: bounce 2s ease-in-out infinite
-}
 
-@keyframes bounce {
-
-    0%,
-    100% {
-        transform: translateY(0)
+@keyframes zoomInOut {
+    0% {
+        opacity: 0;
+        transform: scale(.1);
     }
 
     50% {
-        transform: translateY(-8px)
+        opacity: 1;
+        transform: scale(1.05);
     }
+
+    70% {
+        transform: scale(.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+
+
 }
+
+.icon-animado {
+    animation: zoomInOut 2s ease-in-out infinite;
+    width: 90px;
+}
+
+.icon-animado-m {
+    animation: zoomInOut 2s ease-in-out infinite;
+    width: 160px;
+}
+
+
+
 
 /* --------- Scroll reveal --------- */
 .section.hidden {
@@ -249,7 +291,7 @@ p{
 
 .modal-dialog h4 {
     margin-bottom: 1rem;
-    color: var(--color-primary)
+    color: var(--color-violet)
 }
 
 .modal-dialog .close {
@@ -279,18 +321,33 @@ p{
 
 .azul {
     color: #0033fe;
-    font-size: 3rem
+    font-size: 5rem;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--color-);
+
+
+
 }
 
 .amarillo {
-    color: #ffea04;
-    font-size: 3rem
+    color: var(--color-primary);
+    font-size: 5rem;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--color-);
+    font-weight: 500;
+    font-style: oblique;
+
+
+
+
 }
-#gracias{
-    background-color: #909090;
+
+#gracias {
+    background-color: var(--color-dark);
 }
 
 /* --------- Responsive pequeños --------- */
+
 @media(max-width:480px) {
     .section-title {
         font-size: 1.5rem
@@ -298,5 +355,43 @@ p{
 
     #clock div strong {
         font-size: 1.6rem
+    }
+}
+
+@media(min-width:768px) {
+    .hero-overlay img {
+        width: 220px;
+        margin-top: 15rem
+    }
+
+}
+
+@media(min-width:1024px) {
+    .hero-overlay img {
+        width: 280px;
+        margin-top: 15rem;
+        opacity: 0.8;
+    }
+}
+
+@media(min-width:1200px) {
+    .hero-img {
+        height: 100vh;
+        object-position: top;
+
+    }
+
+    .hero-overlay img {
+        width: 340px;
+        margin-top: 0;
+        opacity: 0.8;
+    }
+}
+
+@media(min-width:1440px) {
+    .hero-overlay img {
+        width: 450px;
+        margin-top: 5rem;
+        opacity: 0.8;
     }
 }

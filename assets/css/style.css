@@ -1,7 +1,7 @@
 /* --------- Variables --------- */
 :root {
     --font-title: 'Poppins', sans-serif;
-    --font-script: 'Great Vibes', cursive;
+    --font-script: 'Tangerine', cursive;
     --color-dark: #0000ff7f;
     --color-light: #fff;
     /* fondo claro */
@@ -81,7 +81,7 @@ p {
 }
 
 .section-title {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
     margin-bottom: 1.6rem;
     margin-top: 1.5rem;
     text-transform: uppercase;
@@ -118,6 +118,115 @@ p {
     margin-top: .5rem
 }
 
+/* Mensaje de bienvenida */
+
+#welcome-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom right, #001f3f, #3a517e);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.welcome-content {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border-radius: 1rem;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+#welcome-overlay h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+#welcome-overlay button {
+    background: #ffffff;
+    color: #000408;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 1rem;
+}
+
+#welcome-overlay button:hover {
+    background: #dddddd;
+}
+
+/* Botón de música */
+#music-toggle {
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    background-color: #cf4dff;
+    color: rgb(75, 96, 255);
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    opacity: 0.8;
+}
+
+#music-toggle:hover {
+    background-color: #5c6fff;
+
+}
+
+#music-toggle {
+    transition: transform 0.3s ease;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#music-toggle:active {
+    transform: scale(1.2) rotate(15deg);
+}
+
+.playing {
+    animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* Animación para el overlay de bienvenida */
+#welcome-overlay {
+    transition: opacity 1s ease;
+}
+
+.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
 
 
 /* --------- HERO --------- */
@@ -132,7 +241,7 @@ p {
     height: 100%;
     object-fit: cover;
     object-position: 20% center;
-    ;
+
 
 }
 
@@ -313,15 +422,15 @@ p {
 /* --------- Gracias --------- */
 .boom {
     font-family: var(--font-script);
-    font-size: 3rem;
+    font-size: 4rem;
     margin-top: 1rem;
-    letter-spacing: 0.7rem;
+    letter-spacing: 0.5rem;
     font-weight: 100;
 }
 
 .azul {
     color: #0033fe;
-    font-size: 5rem;
+    font-size: 4rem;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: var(--color-);
 
@@ -346,11 +455,27 @@ p {
     background-color: var(--color-dark);
 }
 
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
 /* --------- Responsive pequeños --------- */
 
 @media(max-width:480px) {
     .section-title {
-        font-size: 1.5rem
+        font-size: 1.3rem
     }
 
     #clock div strong {

@@ -44,3 +44,44 @@ document.querySelectorAll('.section').forEach(sec=>{
   sec.classList.add('hidden');
   obs.observe(sec);
 });
+// ======= Mensaje de bienvenida + Reproductor de música =========
+
+const music = document.getElementById('bg-music'); // Declarada una sola vez
+const enterBtn = document.getElementById('enter-btn');
+const overlay = document.getElementById('welcome-overlay');
+const toggle = document.getElementById('music-toggle');
+let isPlaying = false;
+
+enterBtn.addEventListener('click', () => {
+  overlay.classList.add('fade-out'); // animación
+  setTimeout(() => {
+    overlay.style.display = 'none'; // ocultar después de animar
+  }, 1000);
+
+  if (music) {
+    music.volume = 0.2;
+    music.play().then(() => {
+      isPlaying = true;
+      toggle.textContent = '⏸️';
+    }).catch(err => console.log('Autoplay bloqueado:', err));
+  }
+});
+
+toggle.addEventListener('click', () => {
+  if (isPlaying) {
+    music.pause();
+    toggle.textContent = '🔊🎵';
+  } else {
+    music.play();
+    toggle.textContent = '⏸️';
+  }
+  isPlaying = !isPlaying;
+});
+
+
+toggle.classList.add('playing'); // cuando empieza
+toggle.classList.remove('playing'); // cuando se pausa
+
+
+
+

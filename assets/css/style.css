@@ -1,14 +1,15 @@
-/* ===== Variables ===== */
+/* --------- Variables --------- */
 :root {
-    --font-title: 'Montserrat', sans-serif;
+    --font-title: 'Poppins', sans-serif;
     --font-script: 'Great Vibes', cursive;
     --color-dark: #0000ff7f;
-    --color-light: #2c3048;
+    --color-light: #fff;
+    /* fondo claro */
     --color-primary: #dcc602;
-    --color-white: #ffffff;
+    --color-white: #fff;
 }
 
-/* ===== Reset rápido ===== */
+/* --------- Reset --------- */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -23,50 +24,49 @@ body {
     line-height: 1.6
 }
 
-/* ===== Botones & util ===== */
+/* --------- Botón --------- */
 .btn {
     display: inline-block;
     padding: .9rem 2rem;
     border-radius: 25px;
     text-decoration: none;
-    font-weight: 600;
-    transition: .3s;
     text-transform: uppercase;
+    font-weight: 600;
+    transition: .3s
 }
 
 .btn.primary {
     background: var(--color-primary);
     color: #02124d;
-    margin-top: 2rem;
-    font-weight: 100;
-
+    margin-top: 1rem;
 }
 
 .btn.outline {
-    border: 2px solid var(--color-primary);
-    color: rgb(153, 255, 0);
-    margin-top: 2rem;
-    font-weight: 100;
+    border: 2px solid var(--color-dark);
+    margin-top: 1rem;
+    color:#000;
+    background-color: #2aff04;
+    
 }
 
 .btn:hover {
     opacity: .85
 }
 
-/* ===== Secciones ===== */
+p{
+    font-size: 1.5rem;
+}
+
+/* --------- Secciones --------- */
 .section {
     padding: 70px 20px;
     text-align: center
 }
 
-.section-inner {
-    max-width: 800px;
-    margin: auto
-}
-
 .section-title {
     font-size: 1.8rem;
-    margin-bottom: 1.6rem
+    margin-bottom: 1.6rem;
+    text-transform: uppercase;
 }
 
 .bg-dark {
@@ -74,11 +74,20 @@ body {
 }
 
 .bg-light {
-    background: var(--color-white)
+    background: var(--color-light);
+    color: #222
 }
 
+.pill {
+    display: inline-block;
+    background: #900cc9;
+    color: #fff;
+    border-radius: 8px 25px 25px;
+    padding: .4rem 1rem;
+    margin-top: .5rem
+}
 
-/* ===== HERO ===== */
+/* --------- HERO --------- */
 .hero {
     position: relative;
     height: 100vh;
@@ -89,8 +98,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-
-
+    object-position: center
 }
 
 .hero-overlay {
@@ -103,23 +111,24 @@ body {
     background: rgba(0, 0, 0, .45)
 }
 
-/* .hero-name {
-    font: 5rem var(--font-script);
-    color: #fff;
-    letter-spacing: 2px
-}
-
-.hero-sub {
-    font-size: 2rem;
-    margin-top: .5rem
-} */
 .hero-overlay img {
-    width: 250px;
-    margin-top: 15rem;
-
+    width: 220px;
+    margin-top: 4rem
 }
 
-/* Scroll arrow */
+@media(min-width:1200px) {
+    .hero-img {
+        height: 90vh;
+        object-position: top center
+    }
+
+    .hero-overlay img {
+        width: 340px;
+        margin-top: 0
+    }
+}
+
+/* Flecha */
 .scroll-down {
     position: absolute;
     bottom: 40px;
@@ -129,7 +138,7 @@ body {
     border-right: 4px solid #fff;
     border-bottom: 4px solid #fff;
     transform: translateX(-50%) rotate(45deg);
-    animation: arrow 2s infinite;
+    animation: arrow 2s infinite
 }
 
 @keyframes arrow {
@@ -149,169 +158,47 @@ body {
     }
 }
 
-/* ===== Countdown ===== */
-#countdown h3 {
-    font-size: 1.3rem;
-
+/* --------- Countdown --------- */
+#clock {
+    display: flex;
+    justify-content: center;
+    gap: .8rem;
+    margin-top: 2rem
 }
 
-.section-title {
-    font-size: 25px;
-    font-weight: normal;
+#clock div {
+    background: rgba(255, 255, 255, .1);
+    padding: 1rem;
+    border-radius: 10px;
+    width: 70px
 }
 
-.countdown {
-    font-size: 1.5rem;
-    font-weight: 900;
-    margin-top: 1.5rem;
-    font-family: 'Times New Roman', Times, serif;
-
+#clock div span {
+    display: block;
+    font-size: .8rem;
+    color: var(--color-primary)
 }
 
-#countdown {
-    height: 250px;
+#clock div:first-child {
+    background: rgba(255, 255, 255, .2)
 }
 
-#clock{display:flex;gap:1rem;justify-content:center;margin-top:1.2rem;}
-.time strong{font-size:3rem;font-weight:700;line-height:1;color:var(--color-primary);}
-.time em{display:block;font-size:.9rem;font-style:normal;letter-spacing:.05rem;}
-
-
-/* ----------FIESTA----------- */
-
-.section-inner {
-    color: #000;
-
-}
-
-.section-inner h3 {
-    letter-spacing: 4px;
-}
-
-#fiesta #gracias {
-    background-color: #C0C0C0;
-}
-
-/* <!-- Confirmación --> */
-
-#rsvp h3 {
-    font-size: 30px;
-
-}
-
-.section-inner p {
-    font-size: 1.2rem;
-
-}
-
-#rsvp p {
-    font-size: 1.8rem;
-    font-family: var(--font-script);
-    color: var(--color-white);
-    letter-spacing: 0.1rem;
-
-}
-
-.section-click {
-    color: #0025aa;
-    font-family: var(--font-title);
-}
-
-
-/* -----------DRESS CODE----------- */
-#dresscode p {
-    background-color: #900cc9;
-    color: var(--color-white);
-    border-radius: 5px 30px 30px;
-    text-align: center;
-    width: 60%;
-    margin-inline: auto;
-}
-
-#dresscode h3 {
-    color: #900cc9;
+#clock div strong {
+    display: block;
     font-size: 2rem;
-    font-family: var(--font-script);
     font-weight: 700;
-
+    color: var(--color-primary)
 }
 
-
-/* <!-- Playlist --> */
-#playlist p {
-    color: var(--color-white);
-    font-family: var(--font-script);
-    font-size: 1.8rem;
-    letter-spacing: 0.1rem;
-
-}
-
-/* --------------<!-- Regalos -->-------------- */
-#regalos h3 {
-    text-transform: uppercase;
-
-}
-
-#btnGift {
-    color: #fffdfd;
-    background-color: rgb(251, 91, 123);
-    font-size: 1.1rem;
-    font-weight: 100;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-/* -----------------<!-- Modal -->---------------- */
-#modalRegalo {
-    padding: 6px;
-}
-
-.modal-title {
-    color: rgb(0, 89, 89);
-    font-size: 2rem;
-
-}
-
-li {
-    list-style: none;
-}
-
-.modal-content ul strong {
-
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 1.4rem;
-
-
-}
-
-.modal-msj {
-    color: #900cc9;
-    font-size: 1.8rem;
-    font-family: var(--font-script);
-    letter-spacing: 0.2rem;
-    font-weight: 700;
-}
-
-
-
-
-
-/* ===== Iconos ===== */
+/* --------- Iconos --------- */
 .icon {
-    width: 80px;
+    width: 90px;
     height: auto;
-    margin-bottom: 1.2rem;
-    
-    
+    margin-bottom: 1.2rem
 }
-.icon-music {
-    width: 150px;
-    height: auto;
-    margin-bottom: 1.2rem;
-    
-    
-}
-.icon-fiesta{
-    width: 140px;
+
+.bounce {
+    animation: bounce 2s ease-in-out infinite
 }
 
 @keyframes bounce {
@@ -326,90 +213,90 @@ li {
     }
 }
 
-.bounce {
-    animation: bounce 2s ease-in-out infinite
+/* --------- Scroll reveal --------- */
+.section.hidden {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: .9s
 }
 
-/* ===== Modal ===== */
+.section.appear {
+    opacity: 1;
+    transform: translateY(0)
+}
+
+/* --------- Modal --------- */
 .modal {
     display: none;
     position: fixed;
     inset: 0;
+    background: rgba(0, 0, 0, .75);
     justify-content: center;
     align-items: center;
-    background: rgba(0, 0, 0, .7);
     z-index: 100
 }
 
-.modal-content {
+.modal-dialog {
     background: #fff;
     color: #000;
     padding: 2rem;
     border-radius: 10px;
-    width: 90%;
     max-width: 400px;
+    width: 90%;
     position: relative;
     text-align: left
 }
 
-.modal-content h4 {
-    margin-bottom: 1rem
+.modal-dialog h4 {
+    margin-bottom: 1rem;
+    color: var(--color-primary)
 }
 
-.modal-content .close {
+.modal-dialog .close {
     position: absolute;
     top: 8px;
     right: 16px;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     cursor: pointer
 }
 
-/* ===== Despedida ===== */
-#gracias {
-    background-color: #00829f;
+.modal-dialog ul {
+    margin-left: 1rem
 }
 
+.modal-dialog hr {
+    margin: 1rem 0
+}
+
+/* --------- Gracias --------- */
 .boom {
-    font-size: 2rem;
-    margin-top: 1rem;
     font-family: var(--font-script);
-    font-size: 1.8rem;
-    letter-spacing: 0.2rem;
-    font-weight: 200;
-    color: #ffffff;
-
-
+    font-size: 3rem;
+    margin-top: 1rem;
+    letter-spacing: 0.7rem;
+    font-weight: 100;
 }
 
 .azul {
     color: #0033fe;
-    font-size: 4rem;
-
+    font-size: 3rem
 }
 
 .amarillo {
     color: #ffea04;
-    font-size: 4rem;
+    font-size: 3rem
+}
+#gracias{
+    background-color: #909090;
 }
 
-/* 1. el hero-logo queda debajo del fold en móviles */
-.hero-overlay img{width:220px;margin-top:4rem}
+/* --------- Responsive pequeños --------- */
+@media(max-width:480px) {
+    .section-title {
+        font-size: 1.5rem
+    }
 
-/* 2. Si usás fondo blanco para .bg-light, asegurate texto oscuro */
-.bg-light{background:#fff;color:#222}
-
-/* 3. unificá fonts */
-body{font-family:'Poppins',sans-serif}
-
-/* 4. botón outline color legible sobre bg-dark */
-.btn.outline{border:2px solid var(--color-primary);color:var(--color-primary)}
-
-
-/* ===== Responsive ===== */
-
-@media (min-width:1024px){
-  .section{padding:90px 40px;}
-  .section-title{font-size:2.4rem}
-  .hero-overlay img{width:360px;margin-top:0;}
-  .icon{width:120px}
+    #clock div strong {
+        font-size: 1.6rem
+    }
 }

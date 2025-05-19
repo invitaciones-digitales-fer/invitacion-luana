@@ -361,7 +361,9 @@ p {
     width: 160px;
 }
 
-
+.icon-animado-reproductor{
+    animation: zoomInOut 2s ease-in-out infinite;
+}
 
 
 /* --------- Scroll reveal --------- */

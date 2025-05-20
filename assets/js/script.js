@@ -102,11 +102,11 @@ if (magicMusic) {
         // Luego, controlamos la música mágica
         if (isMagicMusicPlaying) {
             magicMusic.pause();
-            magicMusicToggle.textContent = '🎵 Música Mágica 🔊'; // Texto cuando está pausada
+            magicMusicToggle.textContent = '🎵 Dale Bo 🔊'; // Texto cuando está pausada
             console.log("Música mágica pausada.");
         } else {
             magicMusic.play().then(() => {
-                magicMusicToggle.textContent = '⏸️ Música Mágica'; // Texto cuando está sonando
+                magicMusicToggle.textContent = '⏸️ Dale booo'; // Texto cuando está sonando
                 console.log("Música mágica reproduciéndose.");
             }).catch(err => console.error("Error al reproducir música mágica:", err));
         }

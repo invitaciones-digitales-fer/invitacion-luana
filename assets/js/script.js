@@ -242,7 +242,7 @@ const magicThemes = [
   {
     name: "Estrellas doradas",
     shape: { type: "star" },
-    color: ["#FFD700", "#FFFACD", "#FFA500"]
+    color: ["#FFD700", "#55ff00", "#192dff"]
   },
   {
     name: "Corazones rosa",
@@ -250,17 +250,19 @@ const magicThemes = [
       type: "char",
       character: {
         value: ["💖", "💗", "❤️"],
-        font: "Verdana",
+        font: "sans-serif",
         style: "",
         weight: "400"
       }
     },
-    color: ["#FF69B4", "#FFC0CB", "#FF1493"]
+    color: ["#FF69B4", "#FFC0CB", "#FF1493"],
+    speed: 2
   },
   {
     name: "Burbujas celestes",
     shape: { type: "circle" },
-    color: ["#00CED1", "#87CEFA", "#E0FFFF"]
+    color: ["#00CED1", "#87CEFA", "#E0FFFF"],
+    speed: 3
   },
   {
     name: "Fiesta mágica",
@@ -273,7 +275,8 @@ const magicThemes = [
         weight: "400"
       }
     },
-    color: ["#FF4500", "#FFD700", "#ADFF2F", "#1E90FF"]
+    color: ["#FF4500", "#FFD700", "#ADFF2F", "#1E90FF"],
+    speed: 5
   }
 ];
 

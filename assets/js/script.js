@@ -83,6 +83,41 @@ toggle.addEventListener('click', () => {
 toggle.classList.add('playing');
 toggle.classList.remove('playing');
 
+// ===== NUEVA MÚSICA MÁGICA Y SU BOTÓN =====
+const magicMusic = document.getElementById('magic-music'); // Referencia al nuevo audio
+const magicMusicToggle = document.getElementById('magic-music-toggle'); // Referencia al nuevo botón
+let isMagicMusicPlaying = false; // Estado de la música mágica
+
+// Asegúrate de que magicMusic exista y no esté en conflicto
+if (magicMusic) {
+    magicMusic.volume = 0.3; // Volumen para la música mágica (ajusta a tu gusto)
+    magicMusicToggle.addEventListener('click', () => {
+        // Primero, pausamos la música de fondo principal
+        if (isPlaying) {
+            music.pause();
+            toggle.textContent = '🔊🎵'; // Actualiza el icono del botón principal
+            isPlaying = false;
+        }
+
+        // Luego, controlamos la música mágica
+        if (isMagicMusicPlaying) {
+            magicMusic.pause();
+            magicMusicToggle.textContent = '🎵 Música Mágica 🔊'; // Texto cuando está pausada
+            console.log("Música mágica pausada.");
+        } else {
+            magicMusic.play().then(() => {
+                magicMusicToggle.textContent = '⏸️ Música Mágica'; // Texto cuando está sonando
+                console.log("Música mágica reproduciéndose.");
+            }).catch(err => console.error("Error al reproducir música mágica:", err));
+        }
+        isMagicMusicPlaying = !isMagicMusicPlaying;
+    });
+} else {
+    console.warn("Elemento de audio 'magic-music' no encontrado.");
+}
+
+
+
 
 
 // -------------------glitterContainer--------------------
@@ -284,5 +319,7 @@ tsParticles.load("glitter-container", {        // id del DIV dentro de #gracias
     zIndex: -1
   }
 });
+
+
 
 

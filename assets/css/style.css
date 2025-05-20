@@ -65,15 +65,22 @@ body {
     font-size: 1.3rem;
 }
 
-#magicBtn{
+#magicBtn ,#magic-music-toggle{
     padding: 0.5rem 0.3rem;
     font-size: 0.8rem;
     text-transform: capitalize;
     background-color: var(--color-primary);
     opacity: 1;
+    border-radius: 50px;
     
 }
-
+#magic-music-toggle{
+    background-color: var(--color-dark);
+    color: var(--color-light);
+}
+.button-wrapper{
+    margin-bottom: 10px;
+}
 
 p {
     font-size: 1.5rem;

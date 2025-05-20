@@ -10,6 +10,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet">
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Delius&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -24,7 +31,7 @@
 
   <!-- COUNTDOWN -->
   <section id="countdown" class="section bg-dark">
-    <h3 class="section-title">¡Te invito a acompañarme en esta noche tan especial!</h3>
+    <h3 class="section-title" role="heading"  aria-level="3">¡Te invito a acompañarme en esta noche tan especial!</h3>
     <div id="clock" class="countdown"></div>
   </section>
 
@@ -32,7 +39,7 @@
   <section id="fiesta" class="section bg-light">
     <div class="section-inner">
       <img src="assets/icons/icono-fiesta.svg" alt="icono-fiesta" class="icon-animado-m">
-      <h3 class="section-title-fiesta">Fiesta</h3>
+      <h3 class="section-title-fiesta" role="heading" aria-level="3">Fiesta</h3>
       <p>Sábado 9 de Agosto&nbsp;•&nbsp;<br>21:30 – 05:30 hs<br>
         Antonio Caggiano 4011, Ituzaingó</p>
       <p class="section-click">Clickeá en el botón y encontrá las indicaciones para llegar.
@@ -46,7 +53,7 @@
   <!-- RSVP -->
   <section id="rsvp" class="section bg-dark">
     <div class="section-inner">
-      <h3 class="section-title">¡Confirmá tu asistencia!</h3>
+      <h3 class="section-title" role="heading" aria-level="3">¡Confirmá tu asistencia!</h3>
       <p>Cuento con tu presencia ❤️</p>
       <a class="btn outline" target="_blank"
         href="https://wa.me/5491167130119?text=¡Hola+Luu!+Confirmo+que+asistiré+a+tu+cumple!!Mi+nombre+completo+es">Confirmar
@@ -58,7 +65,7 @@
   <section id="dresscode" class="section bg-light">
     <div class="section-inner">
       <img src="assets/icons/icono-dresscode.svg" alt="icono-dresscode" class="icon-animado">
-      <h3 class="section-title">Dress Code </h3>
+      <h3 class="section-title" role="heading" aria-level="3">Dress Code </h3>
       <p class="pill">Elegante Sport</p>
     </div>
   </section>
@@ -67,7 +74,7 @@
   <section id="playlist" class="section bg-dark">
     <div class="section-inner">
       <img src="assets/icons/icono-cancion.svg" alt="" class="icon-animado-m">
-      <h3 class="section-title">¡Playlist! 🥳</h3>
+      <h3 class="section-title" role="heading" aria-level="3">¡Playlist! 🥳</h3>
       <p>¡Contame qué canciones no pueden faltar! 🎶</p>
       <a class="btn primary" target="_blank" href="https://tally.so/r/nPylxb">Sugerir canción</a>
     </div>
@@ -77,7 +84,7 @@
   <section id="regalos" class="section bg-light">
     <div class="section-inner">
       <img src="assets/icons/icono-regalo.svg" alt="icono-regalo" class="icon-animado">
-      <h3 class="section-title">Regalos</h3>
+      <h3 class="section-title" role="heading" aria-level="3">Regalos</h3>
       <p>El mejor regalo es que vengas,
         pero si deseás regalarme algo, podés colaborar con mis sueños y anhelos✨<br> ¡Muchas gracias! </p>
       <button id="btnGift" class="btn outline">Hacer un regalo</button>
@@ -103,10 +110,16 @@
   </div>
 
   <!-- GRACIAS -->
+
   <section id="gracias" class="section bg-dark">
-    <h3 class="section-title">¡Gracias por acompañarme en este momento tan importante!</h3>
+    <div id="glitter-container"></div>
+    <h3 class="section-title-gracias" role="heading" aria-level="3">¡Gracias por acompañarme en este momento tan importante!</h3>
     <h2 class="boom">La vamos a pasar de <span class="amarillo">1</span><span class="amarillo">2</span><span
         class="azul">!!</span></h2>
+        <button id="magicBtn" class="btn outline" style="margin-top:2rem">
+  ✨Cambiar magia💫
+</button>
+
   </section>
 
 
@@ -130,13 +143,16 @@
 
   <!-- Botón flotante -->
 
-  <button id="music-toggle" aria-label="Reproducir música" class="icon-animado-reproductor">🔊🎵</button>
+  <button id="music-toggle"  aria-label="Activar o desactivar música de fondo" class="icon-animado-reproductor">🔊🎵</button>
 
+  <!-- Script final -->
 
-
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+  <script src="assets/js/glitter-particles.js"></script>
 
 
   <script src="assets/js/script.js"></script>
+
 </body>
 
 </html>

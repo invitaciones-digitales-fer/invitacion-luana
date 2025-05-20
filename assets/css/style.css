@@ -1,7 +1,7 @@
 /* --------- Variables --------- */
 :root {
-    --font-title: 'Poppins', sans-serif;
-    --font-script: 'Tangerine', cursive;
+    --font-title: 'Slabo', sans-serif;
+    --font-script: 'Delius', cursive;
     --color-dark: #0000ff7f;
     --color-light: #fff;
     /* fondo claro */
@@ -65,6 +65,16 @@ body {
     font-size: 1.3rem;
 }
 
+#magicBtn{
+    padding: 0.5rem 0.3rem;
+    font-size: 0.8rem;
+    text-transform: capitalize;
+    background-color: var(--color-primary);
+    opacity: 1;
+    
+}
+
+
 p {
     font-size: 1.5rem;
     margin-top: 1rem;
@@ -99,7 +109,14 @@ p {
     color: var(--color-violet);
 }
 
-.section-click{
+.section-title-gracias {
+    font-size: 2.5rem;
+    padding: 0;
+    line-height: 3rem;
+    margin-bottom: 1rem;
+}
+
+.section-click {
     color: var(--color-violet);
     width: 300px;
     text-align: center;
@@ -187,6 +204,7 @@ p {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     opacity: 0.8;
+    transition: transform 0.3s ease;
 }
 
 #music-toggle:hover {
@@ -194,11 +212,7 @@ p {
 
 }
 
-#music-toggle {
-    transition: transform 0.3s ease;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
+
 
 #music-toggle:active {
     transform: scale(1.2) rotate(15deg);
@@ -368,7 +382,7 @@ p {
     width: 160px;
 }
 
-.icon-animado-reproductor{
+.icon-animado-reproductor {
     animation: zoomInOut 2s ease-in-out infinite;
 }
 
@@ -405,7 +419,7 @@ p {
     width: 90%;
     position: relative;
     border: 2px solid var(--color-violet);
-    
+
 }
 
 .modal-dialog h4 {
@@ -413,7 +427,8 @@ p {
     color: var(--color-violet);
     text-align: center;
 }
-.modal-dialog p{
+
+.modal-dialog p {
     text-align: center;
     font-size: 1.2rem;
 }
@@ -432,25 +447,26 @@ p {
 
 .modal-dialog hr {
     margin: 1rem 0;
-    
+
 }
 
 /* --------- Gracias --------- */
 .boom {
     font-family: var(--font-script);
-    font-size: 4rem;
-    margin-top: 1rem;
-    letter-spacing: 0.5rem;
-    font-weight: 100;
+    font-size: 2rem;
+    font-style: italic;
+    line-height: 4rem;
+    font-weight: 500;
 }
 
 .azul {
     color: #0033fe;
-    font-size: 4rem;
-    -webkit-text-stroke-width: 4px;
-    -webkit-text-stroke-color: var(--color-dark);
+    font-size: 3.7rem;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: yellow;
     font-weight: 500;
-    text-shadow: 1px 3px 5px #ffffff; 
+    font-style: italic;
+    text-shadow: 1px 3px 5px #000000;
 
 
 
@@ -458,13 +474,13 @@ p {
 
 .amarillo {
     color: var(--color-primary);
-    font-size: 6rem;
-    -webkit-text-stroke-width: 4px;
-    -webkit-text-stroke-color: var(--color-primary);
+    font-size: 4rem;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: rgb(0, 4, 255);
     font-weight: 500;
-    font-style: oblique;
-     text-shadow: 1px 3px 5px #ffffff; 
-     
+    font-style: italic;
+    text-shadow: 1px 3px 5px #000000;
+
 
 
 
@@ -473,7 +489,26 @@ p {
 
 #gracias {
     background-color: var(--color-dark);
+    padding: 30px 20px;
+     position: relative;
+    min-height: 220px;
+    overflow: hidden;
 }
+
+
+#glitter-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 100; /* o más alto si no se ve */
+}
+
+
+
+
 
 
 @keyframes fadeInUp {
@@ -517,6 +552,7 @@ p {
         margin-top: 15rem;
         opacity: 0.8;
     }
+
     .section-title {
         font-size: 2rem
     }
@@ -542,7 +578,9 @@ p {
         margin-top: 5rem;
         opacity: 0.8;
     }
-    .section-title, .section-title-fiesta {
-        font-size: 2.5rem
+
+    .section-title,
+    .section-title-fiesta {
+        font-size: 2rem
     }
 }

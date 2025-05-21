@@ -3,7 +3,7 @@
     --font-title: 'Charm', sans-serif;
     --font-script: 'Slabo', cursive;
     --font-btn: 'Merriweather', sans-serif;
-    --color-dark: #01017a7f;
+    --color-dark: #0101b2;
     --color-light: #fff;
     --color-plate: #b7b7b7;
     /* fondo claro */
@@ -143,10 +143,9 @@ p {
 }
 
 .section-title-fiesta {
-    font-size: 1.8rem;
+    font-size: 3rem;
     margin-bottom: 1.6rem;
-
-    color: var(--color-violet);
+    color: var(--color-dark);
 }
 
 .section-title-gracias {
@@ -157,7 +156,7 @@ p {
 }
 
 .section-click {
-    color: var(--color-violet);
+    color: var(--color-dark);
     width: 300px;
     text-align: center;
     margin-inline: auto;
@@ -170,12 +169,13 @@ p {
 
 .bg-light {
     background: var(--color-light);
-    color: #222
+    color: #222;
+    
 }
 
 .pill {
     display: inline-block;
-    background: #900cc9;
+    background: #0000FF;
     color: #fff;
     border-radius: 8px 25px 25px;
     padding: .4rem 1rem;
@@ -416,7 +416,8 @@ p {
 
 .icon-animado-m {
     animation: zoomInOut 2s ease-in-out infinite;
-    width: 160px;
+    width: 100px;
+    margin-top: 1rem;
 }
 
 .icon-animado-reproductor {

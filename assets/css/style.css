@@ -114,6 +114,7 @@ body {
 p {
     font-size: 1.5rem;
     margin-top: 1rem;
+    
 }
 
 #fiesta,
@@ -123,6 +124,9 @@ p {
     padding: 20px 20px 60px;
 }
 
+.fiesta-fecha{
+    font-family: var(--font-btn);
+}
 
 /* --------- Secciones --------- */
 .section {
@@ -452,6 +456,7 @@ p {
     width: 90%;
     position: relative;
     border: 2px solid var(--color-violet);
+    
 
 }
 
@@ -459,11 +464,14 @@ p {
     margin-bottom: 1rem;
     color: var(--color-violet);
     text-align: center;
+    font-family: var(--font-btn);
+    
 }
 
 .modal-dialog p {
     text-align: center;
     font-size: 1.2rem;
+    
 }
 
 .modal-dialog .close {
@@ -475,7 +483,8 @@ p {
 }
 
 .modal-dialog ul {
-    margin-left: 1.7rem
+    margin-left: 1.7rem;
+    font-family: var(--font-btn);
 }
 
 .modal-dialog hr {

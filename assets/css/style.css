@@ -1,9 +1,11 @@
 /* --------- Variables --------- */
 :root {
-    --font-title: 'Slabo', sans-serif;
-    --font-script: 'Delius', cursive;
-    --color-dark: #0000ff7f;
+    --font-title: 'Charm', sans-serif;
+    --font-script: 'Slabo', cursive;
+    --font-btn: 'Merriweather', sans-serif;
+    --color-dark: #01017a7f;
     --color-light: #fff;
+    --color-plate: #b7b7b7;
     /* fondo claro */
     --color-primary: #dcc602;
     --color-white: #fff;
@@ -18,13 +20,25 @@
     padding: 0
 }
 
+
+
 body {
     font-family: var(--font-title);
     color: var(--color-white);
-    background: var(--color-dark);
+    background:
+        linear-gradient(to right, rgba(0, 0, 32, 0.6) 0%, transparent 25%, transparent 75%, rgba(0, 0, 32, 0.6) 100%),
+        url(images/weichao-deng-ckU7CseK6ag-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    image-rendering: optimizeQuality;
+    position: relative;
     scroll-behavior: smooth;
-    line-height: 1.6
+    line-height: 1.6;
+
 }
+
+
 
 /* --------- Botón --------- */
 .btn {
@@ -32,18 +46,18 @@ body {
     padding: 1.2rem 2.2rem;
     border-radius: 25px;
     text-decoration: none;
-    text-transform: uppercase;
+    font-family: var(--font-btn);
     font-weight: 600;
     transition: .3s
 }
 
 .btn.primary {
-    background: var(--color-primary);
+    background: var(--color-plate);
     color: #02124d;
     margin-top: 2rem;
     font-size: 1.2rem;
-    padding: 0.8rem 1.3rem;
-    width: 16rem;
+    padding: 0.8rem 0rem;
+    width: 14rem;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 255, 0.789);
 }
 
@@ -51,11 +65,12 @@ body {
     border: 2px solid var(--color-dark);
     margin-top: 2rem;
     color: #000;
-    background-color: #2aff04;
-    padding: 0.8rem 0rem;
+    background-color: var(--color-plate);
+    padding: 0.8rem 1rem;
     font-size: 1rem;
-    width: 300px;
-    box-shadow: 1px 1px 5px 1px rgba(255, 234, 0, 0.789);
+    width: 250px;
+    box-shadow: 1px 1px 5px 1px rgba(9, 255, 0, 0.789);
+
 
 
 }
@@ -66,7 +81,7 @@ body {
 }
 
 #btnGift {
-    padding: 0.8rem 2.5rem;
+    padding: 0.8rem 2.4rem;
     font-size: 1.3rem;
     box-shadow: 1px 1px 10px 1px rgba(255, 0, 132, 0.789);
 
@@ -81,6 +96,7 @@ body {
     opacity: 1;
     border-radius: 50px;
     width: 150px;
+    box-shadow: 1px 1px 5px 1px rgba(43, 0, 255, 0.789);
 
 }
 
@@ -118,14 +134,14 @@ p {
     font-size: 1.7rem;
     margin-bottom: 1.6rem;
     margin-top: 1.5rem;
-    text-transform: uppercase;
+
 
 }
 
 .section-title-fiesta {
     font-size: 1.8rem;
     margin-bottom: 1.6rem;
-    text-transform: uppercase;
+
     color: var(--color-violet);
 }
 
@@ -170,7 +186,7 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom right, #001f3f, #3a517e);
+    background: linear-gradient(to bottom right, #989898, #002775);
     color: white;
     display: flex;
     justify-content: center;
@@ -213,7 +229,7 @@ p {
     position: fixed;
     top: 40px;
     right: 40px;
-    background-color: #cf4dff;
+    background-color: var(--color-dark);
     color: rgb(75, 96, 255);
     border: 1px solid rgb(0, 0, 0);
     border-radius: 50%;
@@ -228,7 +244,7 @@ p {
 }
 
 #music-toggle:hover {
-    background-color: #5c6fff;
+    background-color: var(--color-plate);
 
 }
 
@@ -344,7 +360,7 @@ p {
 
 #clock div {
     background: rgba(255, 255, 255, .1);
-    padding: 1rem;
+    padding: 0.5rem;
     border-radius: 10px;
     width: 70px
 }
@@ -352,18 +368,15 @@ p {
 #clock div span {
     display: block;
     font-size: .8rem;
-    color: var(--color-primary)
+    color: var(--color-plate)
 }
 
-#clock div:first-child {
-    background: rgba(255, 255, 255, .2)
-}
 
 #clock div strong {
     display: block;
     font-size: 2rem;
     font-weight: 700;
-    color: var(--color-primary)
+    color: var(--color-plate)
 }
 
 /* --------- Iconos --------- */

@@ -90,30 +90,30 @@ let isMagicMusicPlaying = false; // Estado de la música mágica
 
 // Asegúrate de que magicMusic exista y no esté en conflicto
 if (magicMusic) {
-    magicMusic.volume = 0.3; // Volumen para la música mágica (ajusta a tu gusto)
-    magicMusicToggle.addEventListener('click', () => {
-        // Primero, pausamos la música de fondo principal
-        if (isPlaying) {
-            music.pause();
-            toggle.textContent = '🔊🎵'; // Actualiza el icono del botón principal
-            isPlaying = false;
-        }
+  magicMusic.volume = 0.3; // Volumen para la música mágica (ajusta a tu gusto)
+  magicMusicToggle.addEventListener('click', () => {
+    // Primero, pausamos la música de fondo principal
+    if (isPlaying) {
+      music.pause();
+      toggle.textContent = '🔊🎵'; // Actualiza el icono del botón principal
+      isPlaying = false;
+    }
 
-        // Luego, controlamos la música mágica
-        if (isMagicMusicPlaying) {
-            magicMusic.pause();
-            magicMusicToggle.textContent = '🎵 Dale Bo 🔊'; // Texto cuando está pausada
-            console.log("Música mágica pausada.");
-        } else {
-            magicMusic.play().then(() => {
-                magicMusicToggle.textContent = '⏸️ Dale booo'; // Texto cuando está sonando
-                console.log("Música mágica reproduciéndose.");
-            }).catch(err => console.error("Error al reproducir música mágica:", err));
-        }
-        isMagicMusicPlaying = !isMagicMusicPlaying;
-    });
+    // Luego, controlamos la música mágica
+    if (isMagicMusicPlaying) {
+      magicMusic.pause();
+      magicMusicToggle.textContent = '🎵 Dale Bo 🔊'; // Texto cuando está pausada
+      console.log("Música mágica pausada.");
+    } else {
+      magicMusic.play().then(() => {
+        magicMusicToggle.textContent = '⏸️ Dale booo'; // Texto cuando está sonando
+        console.log("Música mágica reproduciéndose.");
+      }).catch(err => console.error("Error al reproducir música mágica:", err));
+    }
+    isMagicMusicPlaying = !isMagicMusicPlaying;
+  });
 } else {
-    console.warn("Elemento de audio 'magic-music' no encontrado.");
+  console.warn("Elemento de audio 'magic-music' no encontrado.");
 }
 
 
@@ -129,43 +129,51 @@ document.addEventListener("DOMContentLoaded", function () {
   console.log("DOMContentLoaded - glitterContainer:", glitterContainer);
 
   const glitterOptions = {
-  fullScreen: { enable: true, zIndex: -1 },
-  background: { color: "transparent" },
-  particles: {
-    number: { value: 90, density: { enable: true, area: 700 } },
-    color: { value: ["#FFD700", "#FF69B4", "#40E0D0", "#ADFF2F", "#9400D3", "#FF33CC", "#FF0000", "#FF1493", "#9400D3", "#663399", "#7B68EE"] },
-    shape: { type: ["circle", "star"] },
-    opacity: {
-      value: 1,
-      random: true,
-      animation: { enable: true, speed: 1, minimumValue: 0.3, sync: false }
+    fullScreen: { enable: true, zIndex: -1 },
+    background: { color: "transparent" },
+    particles: {
+      number: { value: 90, density: { enable: true, area: 700 } },
+      color: { value: ["#0000FF", "#FFD700"] },
+      shape: {
+        type: ["char", "star"],
+        character: {
+          value: ["💙", "💛"],
+          font: "Segoe UI Emoji",
+          style: "",
+          weight: "400",
+        }
+      },
+      opacity:{
+        value: 1,
+        random: true,
+        animation: { enable: true, speed: 1, minimumValue: 0.3, sync: false }
+      },
+      size: {
+        value: 12,
+        random: true,
+        animation: { enable: true, speed: 2, minimumValue: 1, sync: false }
+      },
+      move: {
+        enable: true,
+        speed: 4,
+        direction: "top",
+        random: true,
+        straight: false,
+        outModes: { default: "out" }
+      }
     },
-    size: {
-      value: 5,
-      random: true,
-      animation: { enable: true, speed: 2, minimumValue: 1, sync: false }
-    },
-    move: {
-      enable: true,
-      speed: 4,
-      direction: "top",
-      random: true,
-      straight: false,
-      outModes: { default: "out" }
+    interactivity: {
+      events: {
+        onHover: { enable: true, mode: "bubble" },
+        onClick: { enable: false }
+      },
+      modes: {
+        bubble: { distance: 100, size: 18, duration: 10, opacity: 1 }
+      }
     }
-  },
-  interactivity: {
-    events: {
-      onHover: { enable: true, mode: "bubble" },
-      onClick: { enable: false }
-    },
-    modes: {
-      bubble: { distance: 100, size: 18, duration: 10, opacity: 1 }
-    }
-  }
-};
+  };
 
-  
+
 
 
   const observer = new IntersectionObserver(entries => {
@@ -217,7 +225,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.getElementById("magicBtn").addEventListener("click", async () => {
   const container = await tsParticles.domItem(0);
-  const newColors = ["#FF1493", "#00CED1", "#32CD32", "#FFA500"].sort(() => 0.5 - Math.random());
+  const newColors = ["#0000FF", "#FFD700"].sort(() => 0.5 - Math.random());
 
   container.options.particles.color.value = newColors;
   container.refresh();
@@ -227,7 +235,7 @@ document.getElementById("magicBtn").addEventListener("click", async () => {
 document.getElementById("magicBtn").addEventListener("click", () => {
   const container = tsParticles.domItem(0); // primer sistema cargado
   // Elegimos nuevos colores al azar
-  const newColors = ["#00FFFF", "#FF00FF", "#FFFF00", "#00FF00"].sort(() => 0.5 - Math.random());
+  const newColors = ["#0000FF"].sort(() => 0.5 - Math.random());
   // Tomamos las opciones actuales, cambiamos el color y actualizamos
   container.load({
     ...container.options,
@@ -242,7 +250,8 @@ const magicThemes = [
   {
     name: "Estrellas doradas",
     shape: { type: "star" },
-    color: ["#FFD700", "#55ff00", "#192dff"]
+    color: ["#0000FF", "#FFD700"],
+    speed: 1.5
   },
   {
     name: "Corazones rosa",
@@ -255,13 +264,13 @@ const magicThemes = [
         weight: "400"
       }
     },
-    color: ["#FF69B4", "#FFC0CB", "#FF1493"],
+    color: ["#0000FF", "#FFD700"],
     speed: 2
   },
   {
     name: "Burbujas celestes",
     shape: { type: "circle" },
-    color: ["#00CED1", "#87CEFA", "#E0FFFF"],
+    color: ["#0000FF", "#FFD700"],
     speed: 3
   },
   {
@@ -275,7 +284,7 @@ const magicThemes = [
         weight: "400"
       }
     },
-    color: ["#FF4500", "#FFD700", "#ADFF2F", "#1E90FF"],
+    color: ["#0000FF", "#FFD700"],
     speed: 5
   }
 ];
@@ -322,6 +331,8 @@ tsParticles.load("glitter-container", {        // id del DIV dentro de #gracias
     zIndex: -1
   }
 });
+
+
 
 
 

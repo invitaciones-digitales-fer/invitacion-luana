@@ -113,9 +113,11 @@ body {
 }
 
 p {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     margin-top: 1rem;
-    
+    margin-inline: auto;
+    font-weight: 700;
+
 }
 
 #fiesta,
@@ -125,7 +127,7 @@ p {
     padding: 20px 20px 60px;
 }
 
-.fiesta-fecha{
+.fiesta-fecha {
     font-family: var(--font-btn);
 }
 
@@ -170,13 +172,13 @@ p {
 }
 
 .bg-light {
-     background: rgba(255, 255, 255);
+    background: rgba(255, 255, 255);
     color: #222;
 }
 
 .pill {
     display: inline-block;
-    background: #900cc9;
+    background: #0c35c9;
     color: #fff;
     border-radius: 8px 25px 25px;
     padding: .4rem 1rem;
@@ -420,7 +422,8 @@ p {
     width: 100px;
     margin-top: 1rem;
 }
-.icon-animado-music{
+
+.icon-animado-music {
     animation: zoomInOut 2s ease-in-out infinite;
     width: 180px;
     margin-top: 1rem;
@@ -429,26 +432,29 @@ p {
 .icon-animado-reproductor {
     animation: zoomInOut 2s ease-in-out infinite;
 }
+
 .bg-glitter {
-  position: relative;
-  z-index: 0;
-  color: #222;
-  overflow: hidden; /* para que no se desborde el pseudo-elemento */
+    position: relative;
+    z-index: 0;
+    color: #222;
+    overflow: hidden;
+    /* para que no se desborde el pseudo-elemento */
 }
 
 .bg-glitter::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url('images/katie-harp-TnQE5X48FMA-unsplash.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0.5; /* ajustá la transparencia acá */
-  z-index: -1;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('images/katie-harp-TnQE5X48FMA-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    /* ajustá la transparencia acá */
+    z-index: -1;
 }
 
 /* --------- Scroll reveal --------- */
@@ -483,7 +489,7 @@ p {
     width: 90%;
     position: relative;
     border: 2px solid var(--color-violet);
-    
+    font-size: 1.3rem;
 
 }
 
@@ -492,13 +498,14 @@ p {
     color: var(--color-violet);
     text-align: center;
     font-family: var(--font-btn);
-    
+
+
 }
 
 .modal-dialog p {
     text-align: center;
-    font-size: 1.2rem;
-    
+    font-size: 1.3rem;
+
 }
 
 .modal-dialog .close {
@@ -557,7 +564,7 @@ p {
 }
 
 #gracias {
-     background: rgba(1, 1, 178, 0.4);
+    background: rgba(1, 1, 178, 0.4);
     padding: 30px 20px;
     position: relative;
     min-height: 220px;

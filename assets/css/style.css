@@ -40,6 +40,7 @@ body {
 
 
 
+
 /* --------- Botón --------- */
 .btn {
     display: inline-block;
@@ -164,18 +165,17 @@ p {
 }
 
 .bg-dark {
-    background: var(--color-dark)
+    background: rgba(1, 1, 178, 0.4);
 }
 
 .bg-light {
-    background: var(--color-light);
+     background: rgba(255, 255, 255);
     color: #222;
-    
 }
 
 .pill {
     display: inline-block;
-    background: #0000FF;
+    background: #900cc9;
     color: #fff;
     border-radius: 8px 25px 25px;
     padding: .4rem 1rem;
@@ -531,7 +531,7 @@ p {
 }
 
 #gracias {
-    background-color: var(--color-dark);
+     background: rgba(1, 1, 178, 0.4);
     padding: 30px 20px;
     position: relative;
     min-height: 220px;

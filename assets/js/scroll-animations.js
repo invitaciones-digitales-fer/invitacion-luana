@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (!rotator) return;
 
-  const frases = ["✨¡Bienvenido!✨"];
+  const frases = ["¡Bienvenido!"];
   let i = 0;
   let j = 0;
   let borrando = false;

@@ -10,13 +10,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/animations-exageradas.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Delius&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+    rel="stylesheet">
 
 
   <!-- Meta Open Graph para previsualización en WhatsApp / redes -->
@@ -28,33 +31,45 @@
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
 
+  <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.3.0/dist/dotlottie-wc.js" type="module">
+  </script>
+
 </head>
 
 <body class="bg-stars">
-  
+   <!-- Mensaje de bienvenida -->
+  <div id="welcome-overlay">
+    <div class="welcome-content">
+      <h1 class="typewriter-rotator"><span id="rotator-text"></span></h1>
+
+      <p class="blur-in">Estás invitado a los 15 de Luana 💖</p>
+      <button id="enter-btn">Entrar a la invitación</button>
+    </div>
+  </div>
+
   <!-- HERO -->
   <header class="hero">
     <img src="assets/img/luana-hero.jpg" alt="Luana" class="hero-img">
     <div class="hero-overlay">
-      <img src="assets/img/reformado.png" alt="Logo Luana">
+      <img src="assets/img/reformado.png" alt="Logo Luana" class="fade-scale">
     </div>
     <a href="#countdown" class="scroll-down" aria-label="Bajar"></a>
   </header>
 
   <!-- COUNTDOWN -->
   <section id="countdown" class="section bg-dark">
-    <h3 class="section-title" role="heading" aria-level="3">¡Te invito a acompañarme en esta noche tan especial!</h3>
-    <div id="clock" class="countdown"></div>
+    <h3 class="section-title skew-in" role="heading" aria-level="3">¡Te invito a acompañarme en esta noche tan especial!</h3>
+    <div id="clock" class="countdown blur-in"></div>
   </section>
 
   <!-- FIESTA -->
   <section id="fiesta" class="section bg-light bg-glitter">
     <div class="section-inner">
       <img src="assets/icons/icono-fiesta.svg" alt="icono-fiesta" class="icon-animado-m">
-      <h3 class="section-title-fiesta" role="heading" aria-level="3">Fiesta</h3>
+      <h3 class="section-title-fiesta fade-up" role="heading" aria-level="3">Fiesta</h3>
       <p class="fiesta-fecha">Sábado 9 de Agosto&nbsp;•&nbsp;<br>21:30 hs<br>
         Antonio Caggiano 4011, Ituzaingó</p>
-      <p class="section-click">Clickeá en el botón y encontrá las indicaciones para llegar.
+      <p class="section-click fade-zoom">Clickeá en el botón y encontrá las indicaciones para llegar.
         <br><em>¡Nos vemos!</em>
       </p>
       <a class="btn primary" target="_blank" href="https://www.google.com/maps?q=Antonio+Caggiano+4011+Ituzaingó">Cómo
@@ -66,7 +81,7 @@
   <section id="rsvp" class="section bg-dark">
     <div class="section-inner">
       <h3 class="section-title fiesta-fecha" role="heading" aria-level="3">¡Confirmá tu asistencia!</h3>
-      <p>Cuento con tu presencia ❤️</p>
+      <p class="pop-in">Cuento con tu presencia ❤️</p>
       <a class="btn outline" target="_blank"
         href="https://wa.me/5491167130119?text=¡Hola+Luu!+Confirmo+que+asistiré+a+tu+cumple!!Mi+nombre+completo+es">Confirmar
         por WhatsApp</a>
@@ -75,10 +90,13 @@
 
   <!-- DRESS CODE -->
   <section id="dresscode" class="section bg-light bg-glitter">
+
     <div class="section-inner">
       <img src="assets/icons/icono-dresscode.svg" alt="icono-dresscode" class="icon-animado">
-      <h3 class="section-title" role="heading" aria-level="3">Dress Code </h3>
-      <p class="pill">Elegante Sport</p>
+
+
+      <h3 class="section-title fade-right" role="heading" aria-level="3">Dress Code </h3>
+      <p class="pill fade-left">Elegante Sport</p>
     </div>
   </section>
 
@@ -86,20 +104,20 @@
   <section id="playlist" class="section bg-dark">
     <div class="section-inner">
       <img src="assets/icons/icono-cancion.svg" alt="" class="icon-animado-music">
-      <h3 class="section-title fiesta-fecha" role="heading" aria-level="3">¡Playlist!</h3>
-      <p>¡Contame qué canciones <br>no pueden faltar! 🎶</p>
+      <h3 class="section-title fiesta-fecha rotate-in" role="heading" aria-level="3">¡Playlist!</h3>
+      <p class="fade-down">¡Contame qué canciones <br>no pueden faltar! 🎶</p>
       <a class="btn primary" target="_blank" href="https://tally.so/r/nPylxb">Sugerir canción</a>
     </div>
   </section>
 
   <!-- REGALOS -->
-  <section id="regalos" class="section bg-light bg-glitter">
+  <section id="regalos" class="section bg-light bg-glitter ">
     <div class="section-inner">
       <img src="assets/icons/icono-regalo.svg" alt="icono-regalo" class="icon-animado">
-      <h3 class="section-title fiesta-fecha" role="heading" aria-level="3">Regalos</h3>
-      <p>El mejor regalo es que vengas,
+      <h3 class="section-title fiesta-fecha pop-in" role="heading" aria-level="3">Regalos</h3>
+      <p class="blur-in">El mejor regalo es que vengas,
         pero si deseás regalarme algo, podés colaborar con mis sueños y anhelos<br> ¡Muchas gracias! </p>
-      <button id="btnGift" class="btn outline">Hacer un regalo</button>
+      <button id="btnGift" class="btn outline fade-zoom">Hacer un regalo</button>
     </div>
   </section>
 
@@ -107,7 +125,7 @@
   <div id="modalRegalo" class="modal">
     <div class="modal-dialog">
       <span class="close">&times;</span>
-      <h4>Datos bancarios</h4>
+      <h4 class="pop-in">Datos bancarios</h4>
       <ul>
         <li><b>Titular:</b> Luana Berterame Pizarro</li>
         <li><b>CVU:</b> 0000003100072226569380</li>
@@ -115,7 +133,7 @@
         <li><b>CUIT/CUIL:</b> 27-50305396-4</li>
       </ul>
       <hr>
-      <h4>Buzón de regalos 🎁</h4>
+      <h4 class="pop-in">Buzón de regalos 🎁</h4>
       <p>Si deseás hacer tu regalo personalmente,<br>
         el día del evento habrá un buzón para dejar obsequios.</p>
     </div>
@@ -125,56 +143,45 @@
 
   <section id="gracias" class="section bg-dark">
     <div id="glitter-container"></div>
-    <h3 class="section-title-gracias" role="heading" aria-level="3">¡Gracias por acompañarme en este momento tan
+    <h3 class="section-title-gracias blur-in" role="heading" aria-level="3">¡Gracias por acompañarme en este momento tan
       importante!</h3>
     <h2 class="boom">La vamos a pasar de <span class="amarillo">1</span><span class="amarillo">2</span><span
-        class="azul">!!</span></h2>
+        class="azul ">!!</span></h2>
 
 
     <div class="button-wrapper">
-      <button id="magicBtn" class="btn outline" style="margin-top:2rem">
+      <button id="magicBtn" class="btn outline fade-zoom" style="margin-top:2rem">
         ✨Cambiar magia💫
       </button>
     </div>
 
     <div class="button-wrapper">
       <audio id="magic-music" src="assets/musica/trompetas de la 12.mp3" loop></audio>
-      <button id="magic-music-toggle">🎵 Dale Bo 🔊</button>
+      <button id="magic-music-toggle" class="skew-in">🎵 Dale Bo 🔊</button>
     </div>
 
   </section>
 
-
-
-
-  <!-- Mensaje de bienvenida -->
-  <div id="welcome-overlay">
-    <div class="welcome-content">
-      <h1>✨¡Bienvenido!✨</h1>
-      <p>Estás invitado a los 15 de Luana 💖</p>
-      <button id="enter-btn">Entrar a la invitación</button>
-    </div>
-  </div>
-
-
   <!-- Reproductor de música -->
   <audio id="bg-music" loop>
-    <source src="assets/musica/Inside Out-01 Bundle of Joy [Main Theme]-Soundtrack⧸OST by Michael Giacchino.mp3" type="audio/mpeg">
+    <source src="assets/musica/Inside Out-01 Bundle of Joy [Main Theme]-Soundtrack⧸OST by Michael Giacchino.mp3"
+      type="audio/mpeg">
     Tu navegador no soporta el elemento de audio.
   </audio>
 
   <!-- Botón flotante -->
 
   <button id="music-toggle" aria-label="Activar o desactivar música de fondo"
-    class="icon-animado-reproductor">🔊🎵</button>
+    class="icon-animado-reproductor slide-up">🔊🎵</button>
 
   <!-- Script final -->
 
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
-  <script src="assets/js/glitter-particles.js"></script>
+  <!-- <script src="assets/js/glitter-particles.js"></script> -->
 
 
   <script src="assets/js/script.js"></script>
+  <script src="assets/js/scroll-animations.js"></script>
 
 </body>
 

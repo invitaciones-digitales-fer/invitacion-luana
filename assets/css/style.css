@@ -20,6 +20,16 @@
     padding: 0
 }
 
+.lottie-icon {
+    display: block;
+    /* lo convierte en “bloque” */
+    margin: 0 auto 22px;
+    /* lo centra y deja un espacio abajo */
+    width: 200px;
+    /* mismo ancho/alto – podés ajustar */
+    height: 200px;
+}
+
 
 
 body {
@@ -386,6 +396,8 @@ p {
     color: var(--color-plate)
 }
 
+
+
 /* --------- Iconos --------- */
 
 
@@ -410,7 +422,9 @@ p {
 
 
 
+
 }
+
 
 .icon-animado {
     animation: zoomInOut 2s ease-in-out infinite;

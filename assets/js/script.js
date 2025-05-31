@@ -27,23 +27,10 @@ btnGift.onclick = () => modal.style.display = 'flex';
 close.onclick = () => modal.style.display = 'none';
 window.onclick = e => { if (e.target === modal) modal.style.display = 'none'; };
 
-/* ====== Scroll reveal ====== */
-const obs = new IntersectionObserver(
-  entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('appear');
-        obs.unobserve(e.target);
-      }
-    });
-  },
-  { threshold: 0.2 }
-);
 
-document.querySelectorAll('.section').forEach(sec => {
-  sec.classList.add('hidden');
-  obs.observe(sec);
-});
+
+
+
 // ======= Mensaje de bienvenida + Reproductor de música =========
 
 const music = document.getElementById('bg-music');
@@ -125,14 +112,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const graciasSection = document.getElementById("gracias");
   const glitterContainer = document.getElementById("glitter-container");
 
-  console.log("DOMContentLoaded - graciasSection:", graciasSection);
-  console.log("DOMContentLoaded - glitterContainer:", glitterContainer);
-
   const glitterOptions = {
-    fullScreen: { enable: true, zIndex: -1 },
+    fullScreen: { enable: false }, // NO pantalla completa
     background: { color: "transparent" },
     particles: {
-      number: { value: 90, density: { enable: true, area: 700 } },
+      number: { value: 60, density: { enable: true, area: 700 } },
       color: { value: ["#0000FF", "#FFD700"] },
       shape: {
         type: ["char", "star"],
@@ -143,29 +127,27 @@ document.addEventListener("DOMContentLoaded", function () {
           weight: "400",
         }
       },
-      opacity:{
+      opacity: {
         value: 1,
         random: true,
-        animation: { enable: true, speed: 1, minimumValue: 0.3, sync: false }
+        animation: { enable: true, speed: 1, minimumValue: 0.3 }
       },
       size: {
         value: 12,
         random: true,
-        animation: { enable: true, speed: 2, minimumValue: 1, sync: false }
+        animation: { enable: true, speed: 2, minimumValue: 1 }
       },
       move: {
         enable: true,
         speed: 4,
         direction: "top",
         random: true,
-        straight: false,
         outModes: { default: "out" }
       }
     },
     interactivity: {
       events: {
-        onHover: { enable: true, mode: "bubble" },
-        onClick: { enable: false }
+        onHover: { enable: true, mode: "bubble" }
       },
       modes: {
         bubble: { distance: 100, size: 18, duration: 10, opacity: 1 }
@@ -173,53 +155,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
-
-
-
+  // 🔍 Solo cargamos tsParticles si la sección está visible
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        console.log("Sección 'gracias' intersectando. Intentando cargar tsParticles...");
-        console.log("window.tsParticles:", window.tsParticles);
-
-        if (window.tsParticles) {
-
-          setTimeout(() => {
-            window.tsParticles.load("glitter-container", glitterOptions)
-              .then(container => {
-                console.log("tsParticles cargado en la sección gracias!");
-                console.log("Contenedor de tsParticles después de cargar:", container);
-                console.log("Contenido de glitter-container después de cargar:", glitterContainer.innerHTML);
-
-              })
-              .catch(error => {
-                console.error("Error al cargar tsParticles:", error);
-              });
-          }, 100);
-
-        } else {
-          console.warn("tsParticles no está disponible. Asegúrate de que el CDN cargue antes de este script.");
-        }
-        observer.unobserve(entry.target);
+        tsParticles.load("glitter-container", glitterOptions);
+        observer.unobserve(entry.target); // deja de observar
       }
     });
-  });
+  }, { threshold: 0.3 });
 
   observer.observe(graciasSection);
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const glitterContainer = document.getElementById("glitter-container");
-
-  if (window.tsParticles && glitterContainer) {
-    window.tsParticles.load("glitter-container", glitterOptions)
-      .then(container => {
-        console.log("tsParticles cargado directamente");
-      })
-      .catch(error => {
-        console.error("Error al cargar tsParticles:", error);
-      });
-  }
 });
 
 
@@ -291,46 +237,46 @@ const magicThemes = [
 
 const randomTheme = magicThemes[Math.floor(Math.random() * magicThemes.length)];
 
-tsParticles.load("glitter-container", {        // id del DIV dentro de #gracias
-  fullScreen: { enable: false },               // ⬅ desactivado
-  background: { color: "transparent" },
-  particles: {
-    number: {
-      value: 40,
-      density: {
-        enable: true,
-        value_area: 800
-      }
-    },
-    color: {
-      value: randomTheme.color
-    },
-    shape: randomTheme.shape,
-    opacity: {
-      value: 0.9,
-      random: true
-    },
-    size: {
-      value: 16,
-      random: { enable: true, minimumValue: 8 }
-    },
-    move: {
-      enable: true,
-      speed: 1.5,
-      direction: "none",
-      outModes: {
-        default: "out"
-      }
-    }
-  },
-  background: {
-    color: "#ffffff00"
-  },
-  fullScreen: {
-    enable: true,
-    zIndex: -1
-  }
-});
+// tsParticles.load("glitter-container", {        // id del DIV dentro de #gracias
+//   fullScreen: { enable: false },               // ⬅ desactivado
+//   background: { color: "transparent" },
+//   particles: {
+//     number: {
+//       value: 40,
+//       density: {
+//         enable: true,
+//         value_area: 800
+//       }
+//     },
+//     color: {
+//       value: randomTheme.color
+//     },
+//     shape: randomTheme.shape,
+//     opacity: {
+//       value: 0.9,
+//       random: true
+//     },
+//     size: {
+//       value: 16,
+//       random: { enable: true, minimumValue: 8 }
+//     },
+//     move: {
+//       enable: true,
+//       speed: 1.5,
+//       direction: "none",
+//       outModes: {
+//         default: "out"
+//       }
+//     }
+//   },
+//   background: {
+//     color: "#ffffff00"
+//   },
+//   fullScreen: {
+//     enable: true,
+//     zIndex: -1
+//   }
+// });
 
 
 

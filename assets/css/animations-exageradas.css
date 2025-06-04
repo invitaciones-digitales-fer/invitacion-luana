@@ -5,25 +5,72 @@
   opacity: 0;
   transform: scale(0.4);
 }
+
 .fade-zoom.appear {
-  animation: fadeZoom 8s ease-out forwards;
+  animation: fadeZoom 3s ease-out forwards;
 }
+
 @keyframes fadeZoom {
-  0%   { opacity: 0; transform: scale(0.4); }
-  100% { opacity: 1; transform: scale(1); }
+  0% {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+
+  /* pequeño over-scale para impacto */
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
+
+.fade-zoom-large {
+  opacity: 0;
+  transform: scale(0.4);
+}
+
+.fade-zoom-large.appear {
+  animation: fadeZoomLarge 8s ease-out forwards;
+}
+
+
+@keyframes fadeZoomLarge {
+  0% {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 
 /* --- Fade-Up ---------------------------------------- */
 .fade-up {
   opacity: 0;
   transform: translateY(100px);
 }
+
 .fade-up.appear {
   animation: fadeUp 1.5s ease-out forwards;
 }
+
 @keyframes fadeUp {
-  0%   { opacity: 0; transform: translateY(100px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* --- Fade-Down -------------------------------------- */
@@ -31,12 +78,21 @@
   opacity: 0;
   transform: translateY(-100px);
 }
+
 .fade-down.appear {
   animation: fadeDown 1.5s ease-out forwards;
 }
+
 @keyframes fadeDown {
-  0%   { opacity: 0; transform: translateY(-100px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* --- Fade-Left -------------------------------------- */
@@ -44,12 +100,21 @@
   opacity: 0;
   transform: translateX(-150px);
 }
+
 .fade-left.appear {
   animation: fadeLeft 1.5s ease-out forwards;
 }
+
 @keyframes fadeLeft {
-  0%   { opacity: 0; transform: translateX(-150px); }
-  100% { opacity: 1; transform: translateX(0); }
+  0% {
+    opacity: 0;
+    transform: translateX(-150px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* --- Fade-Right ------------------------------------- */
@@ -57,12 +122,21 @@
   opacity: 0;
   transform: translateX(150px);
 }
+
 .fade-right.appear {
   animation: fadeRight 1.5s ease-out forwards;
 }
+
 @keyframes fadeRight {
-  0%   { opacity: 0; transform: translateX(150px); }
-  100% { opacity: 1; transform: translateX(0); }
+  0% {
+    opacity: 0;
+    transform: translateX(150px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* --- Pop-In (rebote exagerado) ---------------------- */
@@ -70,24 +144,40 @@
   opacity: 0;
   transform: scale(0.3);
 }
+
 .pop-in.appear {
   animation: popIn 2s ease-out forwards;
 }
+
 @keyframes popIn {
-  0%   { opacity: 0; transform: scale(0.3); }
-  50%  { transform: scale(1.2); }
-  100% { opacity: 1; transform: scale(1); }
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* --- Fade-In ---------------------------------------- */
 .fade-in {
   opacity: 0;
 }
+
 .fade-in.appear {
   animation: fadeIn 2s ease forwards;
 }
+
 @keyframes fadeIn {
-  to { opacity: 1; }
+  to {
+    opacity: 1;
+  }
 }
 
 /* --- Slide-Up con rebote fuerte ---------------------- */
@@ -95,13 +185,25 @@
   opacity: 0;
   transform: translateY(150px);
 }
+
 .slide-up.appear {
   animation: slideUp 2s ease-out forwards;
 }
+
 @keyframes slideUp {
-  0%   { opacity: 0; transform: translateY(150px); }
-  80%  { transform: translateY(-30px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(150px);
+  }
+
+  80% {
+    transform: translateY(-30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* --- Flip-In (giro horizontal dramático) ------------ */
@@ -110,9 +212,11 @@
   transform: rotateY(180deg);
   transform-origin: left;
 }
+
 .flip-in.appear {
   animation: flipIn 1.8s ease-out forwards;
 }
+
 @keyframes flipIn {
   to {
     opacity: 1;
@@ -125,14 +229,29 @@
   opacity: 0;
   transform: translateY(180px);
 }
+
 .bounce-in.appear {
   animation: bounceIn 2s ease-out forwards;
 }
+
 @keyframes bounceIn {
-  0%   { transform: translateY(180px); opacity: 0; }
-  60%  { transform: translateY(-40px); opacity: 1; }
-  80%  { transform: translateY(20px); }
-  100% { transform: translateY(0); }
+  0% {
+    transform: translateY(180px);
+    opacity: 0;
+  }
+
+  60% {
+    transform: translateY(-40px);
+    opacity: 1;
+  }
+
+  80% {
+    transform: translateY(20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
 /* --- Fade-In con escala grande (zoom-out) ----------- */
@@ -140,9 +259,11 @@
   opacity: 0;
   transform: scale(2);
 }
+
 .fade-scale.appear {
   animation: fadeScale 1.5s ease-out forwards;
 }
+
 @keyframes fadeScale {
   to {
     opacity: 1;
@@ -158,12 +279,20 @@
   animation:
     typing 2.5s steps(30, end) forwards,
     blink .75s step-end infinite;
-  width: 0; /* empieza en 0 */
+  width: 0;
+  /* empieza en 0 */
 }
 
 @keyframes typing {
-  from { width: 0 }
-  to   { width: 100% } /* se mantiene el 100% al final */
+  from {
+    width: 0
+  }
+
+  to {
+    width: 100%
+  }
+
+  /* se mantiene el 100% al final */
 }
 
 .typewriter-loop {
@@ -172,14 +301,25 @@
   white-space: nowrap;
   border-right: 2px solid #fff;
   animation: typingLoop 3s steps(30, end) infinite,
-             blink 0.75s step-end infinite;
+    blink 0.75s step-end infinite;
 }
 
 @keyframes typingLoop {
-  0%   { width: 0 }
-  50%  { width: 100% }
-  80%  { width: 100% }
-  100% { width: 0 }
+  0% {
+    width: 0
+  }
+
+  50% {
+    width: 100%
+  }
+
+  80% {
+    width: 100%
+  }
+
+  100% {
+    width: 0
+  }
 }
 
 
@@ -188,24 +328,40 @@
   opacity: 0;
   transform: rotate(-360deg) scale(0.3);
 }
+
 .rotate-in.appear {
   animation: rotateIn 2s ease-out forwards;
 }
+
 @keyframes rotateIn {
-  to {
+  0% {
+    opacity: 0;
+    transform: rotate(-360deg) scale(0.3);
+  }
+
+  70% {
+    opacity: 1;
+    transform: rotate(5deg) scale(1.1);
+  }
+
+  /* Un ligero rebote */
+  100% {
     opacity: 1;
     transform: rotate(0) scale(1);
   }
 }
+
 
 /* --- Skew-In (ingreso inclinado fuerte) ------------- */
 .skew-in {
   opacity: 0;
   transform: skewX(-40deg) translateX(-150px);
 }
+
 .skew-in.appear {
   animation: skewIn 1.5s ease-out forwards;
 }
+
 @keyframes skewIn {
   to {
     opacity: 1;
@@ -219,9 +375,11 @@
   opacity: 0;
   transform: translateY(100px);
 }
+
 .blur-in.appear {
   animation: blurIn 1.8s ease-out forwards;
 }
+
 @keyframes blurIn {
   to {
     filter: blur(0);

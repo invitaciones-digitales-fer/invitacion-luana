@@ -6,38 +6,35 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Invitación • Luana XV</title>
 
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/animations-exageradas.css">
+  <!-- PRECONEXIÓN A GOOGLE FONTS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Delius&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&display=swap" rel="stylesheet">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
-    rel="stylesheet">
+<!-- FUENTES REALES EN USO -->
+<link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- ESTILOS PRINCIPALES -->
+<link rel="stylesheet" href="assets/css/style.min.css">
+<link rel="stylesheet" href="assets/css/animations-exageradas.css">
+
 
 
   <!-- Meta Open Graph para previsualización en WhatsApp / redes -->
   <meta property="og:title" content="¡Estás invitado al cumpleaños de 15 de Luana! 🎉" />
   <meta property="og:description"
     content="Estás invitado a una noche inolvidable. Confirmá tu asistencia desde esta invitación digital." />
-  <meta property="og:image" content="https://i.imgur.com/VSFcQyk.png" />
+  <!-- <meta property="og:image" content="https://i.imgur.com/VSFcQyk.png" /> -->
   <meta property="og:url" content="https://fernandopizarrodw.github.io/invitacion-luana/" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.3.0/dist/dotlottie-wc.js" type="module">
-  </script>
+  <!-- <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.3.0/dist/dotlottie-wc.js" type="module">
+  </script> -->
 
 </head>
 
 <body class="bg-stars">
-   <!-- Mensaje de bienvenida -->
+  <!-- Mensaje de bienvenida -->
   <div id="welcome-overlay">
     <div class="welcome-content">
       <h1 class="typewriter-rotator"><span id="rotator-text"></span></h1>
@@ -49,16 +46,17 @@
 
   <!-- HERO -->
   <header class="hero">
-    <img src="assets/img/luana-hero.jpg" alt="Luana" class="hero-img">
+    <img src="assets/img/luana-hero.jpg" alt="Luana" class="hero-img" loading="lazy">
     <div class="hero-overlay">
-      <img src="assets/img/Copilot_20250531_142530.png" alt="Logo Luana" class="fade-zoom appear">
+      <img src="assets/img/Copilot_20250531_142530.png" alt="Logo Luana" class="fade-zoom appear" loading="lazy">
     </div>
     <a href="#countdown" class="scroll-down" aria-label="Bajar"></a>
   </header>
 
   <!-- COUNTDOWN -->
   <section id="countdown" class="section bg-dark">
-    <h3 class="section-title skew-in" role="heading" aria-level="3">¡Te invito a acompañarme en esta noche tan especial!</h3>
+    <h3 class="section-title skew-in" role="heading" aria-level="3">¡Te invito a acompañarme en esta noche tan especial!
+    </h3>
     <div id="clock" class="countdown blur-in"></div>
   </section>
 
@@ -67,7 +65,7 @@
     <div class="section-inner">
       <img src="assets/icons/icono-fiesta.svg" alt="icono-fiesta" class="icon-animado-m">
       <h3 class="section-title-fiesta fade-up" role="heading" aria-level="3">Fiesta</h3>
-      <p class="fiesta-fecha">Sábado 9 de Agosto&nbsp;•&nbsp;<br>21:30 hs<br>
+      <p class="fiesta-fecha">Sábado 9 de Agosto&nbsp;•&nbsp;<br>21:00 hs<br>
         Antonio Caggiano 4011, Ituzaingó</p>
       <p class="section-click fade-zoom">Clickeá en el botón y encontrá las indicaciones para llegar.
         <br>¡Nos vemos!
@@ -163,11 +161,11 @@
   </section>
 
   <!-- Reproductor de música -->
-  <audio id="bg-music" loop>
+  <!-- <audio id="bg-music" loop>
     <source src="assets/musica/Inside Out-01 Bundle of Joy [Main Theme]-Soundtrack⧸OST by Michael Giacchino.mp3"
       type="audio/mpeg">
     Tu navegador no soporta el elemento de audio.
-  </audio>
+  </audio> -->
 
   <!-- Botón flotante -->
 
@@ -176,14 +174,14 @@
 
   <!-- Script final -->
 
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js" defer></script>
   <!-- <script src="assets/js/glitter-particles.js"></script> -->
 
 
-  <script src="assets/js/script.js"></script>
+  <script src="assets/js/script.min.js"></script>
   <script src="assets/js/scroll-animations.js"></script>
-  <script> document.addEventListener('DOMContentLoaded', function() { document.querySelector('.flip-in').classList.add('appear'); }); </script>
-  
+  <script> document.addEventListener('DOMContentLoaded', function () { document.querySelector('.flip-in').classList.add('appear'); }); </script>
+
 
 </body>
 

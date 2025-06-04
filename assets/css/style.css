@@ -1,8 +1,7 @@
 /* --------- Variables --------- */
 :root {
-    --font-title: 'Charm', sans-serif;
-    --font-script: 'Slabo', cursive;
-    --font-btn: 'Merriweather', sans-serif;
+    --font-title: 'Charm', cursive;
+    --font-btn: 'Merriweather', serif;
     --color-dark: #0101b2;
     --color-light: #fff;
     --color-plate: #b7b7b7;

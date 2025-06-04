@@ -33,26 +33,26 @@ window.onclick = e => { if (e.target === modal) modal.style.display = 'none'; };
 
 // ======= Mensaje de bienvenida + Reproductor de música =========
 
-const music = document.getElementById('bg-music');
+let music; // declaramos pero no creamos aún
 const enterBtn = document.getElementById('enter-btn');
 const overlay = document.getElementById('welcome-overlay');
 const toggle = document.getElementById('music-toggle');
 let isPlaying = false;
 
 enterBtn.addEventListener('click', () => {
-
   overlay.classList.add('fade-out');
   setTimeout(() => {
     overlay.style.display = 'none';
   }, 1000);
 
-  if (music) {
-    music.volume = 0.2;
-    music.play().then(() => {
-      isPlaying = true;
-      toggle.textContent = '⏸️';
-    }).catch(err => console.log('Autoplay bloqueado:', err));
-  }
+  // CREAMOS el audio cuando se entra
+  music = new Audio('assets/musica/Inside Out-01 Bundle of Joy [Main Theme]-Soundtrack⧸OST by Michael Giacchino.mp3');
+  music.volume = 0.2;
+  music.loop = true;
+  music.play().then(() => {
+    isPlaying = true;
+    toggle.textContent = '⏸️';
+  }).catch(err => console.log('Autoplay bloqueado:', err));
 });
 
 toggle.addEventListener('click', () => {
